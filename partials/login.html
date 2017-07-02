@@ -1,0 +1,26 @@
+<section class="inner-content">
+	<section class="login-section">
+		<form>
+			<legend>Login</legend>
+			<fieldset>
+				<div class="error-msg">
+					<span ng-show="vdo.accessDenied">Please login to see my favourite / my cart </span>
+				</div>
+				<div class="single-field">
+					<label>Username :</label>
+					<input type="text" ng-model="vdo.fields.username" >
+				</div>
+				<div class="single-field">
+					<label>Password :</label>
+					<input type="password" ng-model="vdo.fields.password">
+				</div>
+				<div class="error-msg">
+					<span ng-show="vdo.showInvalidUser">Invalid username/password</span>
+				</div>
+				<div class="single-field">
+					<input type="submit" name="Login" ng-click="vdo.login(vdo)"value="Login">
+				</div>
+			</fieldset>
+		</form>
+	</section>
+</section>

@@ -1,0 +1,13 @@
+<section class="category-section" ng-controller="categoryController	">
+		<section ng-repeat="mainCategory in vdo.categoriesList" ng-init="vdo.show[$index]=false">
+			<section class="category-header" ng-class="{'open-icon':vdo.show[$index]}" ng-click="vdo.toggleShow($index,vdo)">
+				<h2  ng-bind="mainCategory.name"></h2>
+			</section>
+			<ul ng-show="vdo.show[$index]" class="animate-show">
+				<li ng-repeat="list in mainCategory.list" ng-click="vdo.changeCategory(mainCategory.name,list.categoryName)">
+					<span ng-bind="(list.categoryName)"></span>
+					<span ng-bind="list.categoryCount"></span>
+				</li>
+			</ul>
+		</section>
+</section>

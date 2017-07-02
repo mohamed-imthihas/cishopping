@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CI eZ Deal</title>
+		<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<link rel="stylesheet" type="text/css" href="assets/lib/ngDialog.css">
+		<link rel="stylesheet" type="text/css" href="assets/lib/ngDialog-theme-default.css">
+	</head>
+	<body>
+		<section class="container" ng-app="shoppingApp" ng-controller="headerController" >
+			<header>
+				<div class="header-wrapper">
+					<div class="logo" ng-click="vdo.home()">
+						<a href="javascript:void(0);" ><img src="assets/images/logo.png" alt="Site logo"></a>
+					</div>
+					<nav class="menu">
+						<ul>
+							<li><a href="javascript:void(0);" ng-click="vdo.myFav()">My favourites</a></li>
+							<li><a href="javascript:void(0);" ng-click="vdo.myCart()">My Cart</a></li>
+							<li><a href="#faq">FAQ</a></li>
+							<li><a href="#care">Customer Care</a></li>
+						</ul>
+					</nav>
+					<div class="clear"></div>
+				</div>
+			</header><!-- header ends -->
+			<section class="body-content-container">
+				<div class="body-content-wrapper">
+					<div class="body-content">
+						<div class="empty-style">							
+							<div class="inner-style">
+								
+							</div>
+						</div>
+						<section class="section-header">
+							<div class="section-header-wrapper" ng-cloak>
+								<div class="user-info">
+									<span>Welcome</span>
+									<span ng-bind="vdo.userDetail.fullname"></span>
+									<span class="logout" ng-show="vdo.userDetail.isLogged" ng-click="vdo.loggedOut(vdo)">[Logout]</span>
+								</div>
+								<div class="cart-info" ng-hide="vdo.cartDetail.isCheckOut">
+									<span>Your Cart</span>
+									<span>(</span><span ng-bind="vdo.cartDetail.count"></span><span>)</span>
+								</div>
+								<div class="clear"></div>
+							</div>
+							<div class="clear"></div>
+						</section><!-- section header ends -->
+		<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->				
+						<section class="main-content" ng-view>
+							
+							<div class="clear"></div>
+						</section>
+		<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->								
+						<div class="clear"></div>
+					</div>	
+				</div>
+			</section><!-- main-content ends -->
+			<footer>
+				<span>Powered by CI Team</span>
+			</footer>
+		</section>
+		<script type="text/javascript" src="assets/lib/jquery.min.js"></script>
+		<script type="text/javascript" src="assets/lib/angular.min.js"></script>
+		<script type="text/javascript" src="assets/lib/angular-route.min.js"></script>
+		<script type="text/javascript" src="assets/lib/ngDialog.js"></script>
+		<script type="text/javascript" src="assets/lib/angular-animate.min.js"></script>
+		<script type="text/javascript" src="app/app.js"></script>
+		<script type="text/javascript" src="app/route.js"></script>
+		<script type="text/javascript" src="app/directives/categorydir.js"></script>
+		<script type="text/javascript" src="app/slideanimation.js"></script>
+		<script type="text/javascript" src="app/services/storageservice.js"></script>
+		<script type="text/javascript" src="app/controllers/headerctrl.js"></script>
+		<script type="text/javascript" src="app/controllers/loginctrl.js"></script>
+		<script type="text/javascript" src="app/services/loginservice.js"></script>
+		<script type="text/javascript" src="app/controllers/homectrl.js"></script>
+		<script type="text/javascript" src="app/controllers/productctrl.js"></script>
+		<script type="text/javascript" src="app/services/productservice.js"></script>
+		<script type="text/javascript" src="app/controllers/favouritectrl.js"></script>
+		<script type="text/javascript" src="app/controllers/confirmctrl.js"></script>
+		<script type="text/javascript" src="app/services/cartservice.js"></script>
+		<script type="text/javascript" src="app/controllers/cartctrl.js"></script>
+		<script type="text/javascript" src="app/controllers/catergoryctrl.js"></script>
+		<script type="text/javascript" src="app/controllers/faqctrl.js"></script>
+	</body>
+</html>

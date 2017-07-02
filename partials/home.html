@@ -1,0 +1,78 @@
+<section class="inner-content">
+		<section class="slider-container">
+			<section class="slider">
+				<div class="slide slide-animation" ng-repeat="slide in vdo.slides" ng-hide="!vdo.isCurrentSlideIndex(vdo,$index)">
+					<figure>
+						<img ng-src={{slide.image}} alt="Special Product">
+					</figure>
+					<div class="content">
+						<h2>Special Offer!</h2>
+						<p ng-bind="slide.description"></p>
+						<button>details</button>
+					</div>
+					<div class="clear"></div>
+				</div>				
+			</section>
+				<a class="arrow prev" href="javascript:void(0);" ng-click="vdo.prevSlide(vdo)"></a>
+			    <a class="arrow next" href="javascript:void(0);" ng-click="vdo.nextSlide(vdo)"></a>
+			    <nav class="nav">
+			        <div class="wrapper">
+			            <ul class="dots">
+			                <li class="dot" ng-repeat="slide in vdo.slides">
+			                    <a href="javascript:void(0);" ng-class="{'active':vdo.isCurrentSlideIndex(vdo,$index)}"
+			                       ng-click="vdo.setCurrentSlideIndex(vdo,$index);"></a></li>
+			            </ul>
+			        </div>
+			    </nav>
+		</section>
+		<section class="product-container" ng-controller="productController">
+			<section class="category-header">
+				<h2 ng-bind="vdo.productCategory.name"></h2>
+			</section>
+			
+			<section class="products-list">
+					<section class="error-msg" ng-show="vdo.displayProducts.length==0">
+						<span>Sorry no items available in this category</span>
+						<div>
+							<img src="assets/images/sorry.png" alt="Sad Smiley">
+						</div>
+					</section>
+					<div class="single-product" ng-class="{'deal-product': product.productCode == vdo.dealProduct.productCode}" ng-repeat="product in vdo.displayProducts" >
+						<h3 ng-bind="product.productName"></h3>
+						<figure ng-mouseenter="show=true" ng-mouseleave="show=false">
+							<img ng-src="{{product.image}}" alt="{{product.productName}}">
+						</figure>
+						<p ng-bind="product.productDesc" ng-mouseenter="show=true" ng-mouseleave="show=false" ng-show="show"></p>
+						<div class="price">
+							<span class="price-text">Price:</span><span class="price-value" ng-bind="(product.productPrice | currency : '&#x24;')"></span>
+						</div>
+						<div>
+							<span class="buy-link" ng-click="vdo.addCart(product)"><a href="javascript:void(0);">Buy Now!</a></span>
+							<span class="fav-link" ng-click="vdo.addFav(product)"><a href="javascript:void(0);">Add to favourites</a></span>
+							<div class="clear"></div>
+						</div>
+					</div>
+					
+				<div class="clear"></div>
+			</section>
+			<section class="deal">
+				<div class="deal-box">
+					<div class="single-product">
+						<h3 ng-bind="vdo.dealProduct.productName"></h3>
+						<figure>
+							<img ng-src="{{vdo.dealProduct.image}}" alt="{{vdo.dealProduct.productName}}">
+						</figure>
+						<div class="price">
+							<span class="price-text">Price:</span><span class="price-value" ng-bind="(vdo.dealProduct.productPrice | currency : '&#x24;')"></span>
+						</div>
+						<div>
+							<span class="buy-link" ng-click="vdo.addCart(vdo.dealProduct)"><a href="javascript:void(0);">Buy Now!</a></span>
+							<span class="fav-link" ng-click="vdo.addFav(vdo.dealProduct)"><a href="javascript:void(0);">Add to favourites</a></span>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</section>
+	</section>
+<category></category>

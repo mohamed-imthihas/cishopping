@@ -1,0 +1,8 @@
+<section class="inner-content">
+	<section class="faq-section">
+		<section class="single-faq" ng-repeat="singleQues in questions" ng-init="vdo.show[$index]=false">
+			<h2 class="question" ng-bind="singleQues.question" ng-click="toggleShow($index,vdo)" ng-class="{'open':vdo.show[$index]}"></h2>
+			<p class="answer animate-show" ng-show="vdo.show[$index]" ng-bind="singleQues.answer"></p>
+		</section>
+	</section>
+</section>

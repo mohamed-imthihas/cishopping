@@ -1,0 +1,33 @@
+<section class="inner-content">
+	<section>
+		<section class="category-header">
+			<h2>Favourite list</h2>
+		</section>
+		<section class="products-list favourite">
+			<section class="error-msg" ng-show="vdo.displayProducts.length==0">
+				<span>Sorry no favourite item got added</span>
+				<div>
+					<img src="assets/images/sorry.png" alt="Sad smiley">
+				</div>
+				<div class="button-holder">
+					<button class="blue-button" ng-click="vdo.backToHome()">Back to home</button>
+				</div>
+			</section>
+			<div class="single-product" ng-repeat="product in vdo.displayProducts">
+				<h3 ng-bind="product.productName"></h3>
+				<figure>
+					<img ng-src="{{product.image}}" alt="{{product.productName}}">
+				</figure>
+				<div class="price">
+					<span class="price-text">Price:</span><span class="price-value" ng-bind="(product.productPrice | currency)"></span>
+				</div>
+				<div>
+					<span class="buy-link" ng-click="vdo.addCart(product)"><a href="javascript:void(0);">Buy Now!</a></span>						<span class="fav-link" ng-click="vdo.removeFav(product)"><a href="javascript:void(0);">Remove</a></span>
+					<div class="clear"></div>
+				</div>
+			</div>	
+			<div class="clear"></div>
+		</section>
+	</section>
+</section>
+<category></category>

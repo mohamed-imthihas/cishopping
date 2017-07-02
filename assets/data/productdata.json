@@ -1,0 +1,105 @@
+{
+"products":[{
+	"productCode" : "E01",
+	"productName" : "iPhone",
+	"productDesc" : "This is iPhone",
+	"productPrice" : "700",
+	"image" : "assets/images/iphone.png",
+	"category" : "1",
+	"sellerType" : "1"
+	},
+	{
+	"productCode" : "E02",
+	"productName" : "iPad",
+	"productDesc" : "This is iPad",
+	"productPrice" : "500",
+	"image" : "assets/images/ipad.png",
+	"category" : "1",
+	"sellerType" : "2"
+	},
+	{
+	"productCode" : "B01",
+	"productName" : "AmericanTourister",
+	"productDesc" : "This is AmericanTourister",
+	"productPrice" : "500",
+	"image" : "assets/images/bag1.jpg",
+	"category" : "2",
+	"sellerType" : "1"
+	},
+	{
+	"productCode" : "B02",
+	"productName" : "Travelon",
+	"productDesc" : "This is Travelon ",
+	"productPrice" : "400",
+	"image" : "assets/images/bag2.jpg",
+	"category" : "2",
+	"sellerType" : "3"
+	},
+	{
+	"productCode" : "S01",
+	"productName" : "Reebok",
+	"productDesc" : "This is Reebok ",
+	"productPrice" : "200",
+	"image" : "assets/images/reebok.jpg",
+	"category" : "3",
+	"sellerType" : "1" 
+	},
+	{
+	"productCode" : "S02",
+	"productName" : "Nike",
+	"productDesc" : "This is Nike ",
+	"productPrice" : "150",
+	"image" : "assets/images/nike.jpg",
+	"category" : "3",
+	"sellerType" : "2" 
+	},
+	{
+	"productCode" : "D01",
+	"productName" : "Lehanga",
+	"productDesc" : "This is Lehanga ",
+	"productPrice" : "70",
+	"image" : "assets/images/lehanga.jpg",
+	"category" : "4",
+	"sellerType" : "3" 
+	},
+	{
+		"productCode" : "D02",
+		"productName" : "Anarkali",
+		"productDesc" : "This is Anarkali ",
+		"productPrice" : "45",
+		"image" : "assets/images/anarkali.jpg",
+		"category" : "4",
+		"sellerType" : "2" 
+	}
+	],
+"categories" : [
+	{
+		"categoryId" : "1",
+		"categoryName" : "Electronics"
+	},
+	{
+		"categoryId" : "2",
+		"categoryName" : "Bags"
+	},
+	{
+		"categoryId" : "3",
+		"categoryName" : "Shoes"
+	},
+	{
+		"categoryId" : "4",
+		"categoryName" : "Dress"
+	}],
+"sellerType" : [{
+		"sellerTypeId" : "1",
+		"sellerName" : "Best Seller"
+	}, 
+	{
+		"sellerTypeId" : "2",
+		"sellerName" : "Popular"
+	},
+	{
+		"sellerTypeId" : "3",
+		"sellerName" : "Others"
+	}],
+"featuredProducts" : ["E01","E02","B01","S01","S02","D02"]
+}
